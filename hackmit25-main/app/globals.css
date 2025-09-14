@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --clover-green: #7dd3fc;
+  --yc-accent: #7B9669;
+  --yc-accent-light: #BAC8B1;
+  --yc-accent-dark: #6B8659;
+  --clover-gray-50: #fafafa;
+  --clover-gray-100: #f5f5f5;
+  --clover-gray-200: #e5e5e5;
+  --clover-gray-300: #d4d4d4;
+  --clover-gray-600: #525252;
+  --clover-gray-700: #404040;
+  --clover-gray-900: #171717;
+  color: var(--clover-gray-900);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  color: var(--clover-gray-900);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Clover-inspired components */
+.clover-card {
+  @apply bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5;
+}
+
+.clover-button {
+  @apply bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-xl transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2;
+}
+
+.clover-button-outline {
+  @apply border border-gray-300 text-gray-700 hover:border-gray-900 hover:text-gray-900 font-medium py-3 px-6 rounded-xl transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 inline-flex items-center gap-2;
+}
+
+.clover-input {
+  @apply w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 text-gray-900 placeholder-gray-400 bg-white;
+}
+
+.clover-gradient {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.clover-hero-gradient {
+  background: linear-gradient(135deg, #fafafa 0%, #f0f9ff 50%, #ecfdf5 100%);
+}
+
+/* YC-style Button styles */
+.yc-button-primary {
+  @apply text-white px-6 py-3 rounded-lg font-black text-xs uppercase tracking-widest transition-all duration-200 hover:shadow-lg;
+  background-color: #7B9669;
+}
+
+.yc-button-secondary {
+  @apply text-black px-6 py-3 rounded-lg font-black tracking-widest border-2 hover:bg-black hover:text-white transition-all duration-300 text-xs uppercase;
+  border-color: #7B9669;
+  color: #7B9669;
+}
+
+.yc-button-secondary:hover {
+  background-color: #7B9669;
+  color: white;
+}
+
+.yc-button-accent {
+  @apply text-white px-8 py-4 rounded-lg font-bold tracking-tight transition-all duration-300 border-0 text-sm uppercase;
+  background-color: #7B9669;
+}
+
+.yc-button-accent:hover {
+  background-color: #6B8659;
+}
+
+/* YC-style Input styles */
+.yc-input {
+  @apply w-full px-4 py-4 border-2 border-gray-200 rounded-lg focus:border-black outline-none transition-all duration-300 bg-white text-black placeholder-gray-400 font-medium;
+}
+
+/* YC-style Gradients */
+.yc-hero-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #f5f5f5 100%);
+}
+
+.yc-gradient {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+}
+
+.yc-accent-gradient {
+  background: linear-gradient(135deg, #ff6600 0%, #ff8533 100%);
+}
+
+/* Scrolling ticker animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.ticker {
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+}
+
+.ticker-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* YC-style Progress bars */
+.yc-progress {
+  @apply bg-gray-200 rounded-full overflow-hidden;
+}
+
+.yc-progress-bar {
+  @apply bg-black h-full transition-all duration-500 ease-out;
+}
+
+.yc-progress-accent {
+  @apply h-full transition-all duration-500 ease-out;
+  background: linear-gradient(to right, #7B9669, #6B8659);
+}
+
+/* YC-style Hover animations */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
+}
+
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+/* YC-style Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Stagger animation delays */
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* YC-style Typography */
+.yc-heading {
+  @apply font-black text-black leading-tight tracking-tight;
+}
+
+.yc-subheading {
+  @apply text-gray-600 font-medium;
+}
+
+.yc-mono {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  @apply font-medium;
+}
+
+/* Legacy eco classes for backward compatibility */
+.eco-gradient {
+  background: linear-gradient(135deg, var(--clover-accent) 0%, #16a34a 100%);
+}
+
+.eco-card {
+  @apply clover-card;
+}
+
+.eco-button {
+  @apply clover-button;
+}
+
+.eco-button-outline {
+  @apply clover-button-outline;
+}

@@ -1,0 +1,288 @@
+/* EcoTrack Extension Styles - Honey-like Design */
+#ecotrack-widget {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 380px;
+  max-height: 600px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 8px 32px rgba(0, 0, 0, 0.08);
+  z-index: 10000;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  animation: ecotrack-slide-in 0.3s ease-out;
+}
+
+.ecotrack-header {
+  background: #7B9669;
+  color: white;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.ecotrack-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ecotrack-icon {
+  font-size: 20px;
+  margin-right: 12px;
+  animation: ecotrack-pulse 2s ease-in-out infinite;
+}
+
+.ecotrack-title {
+  font-weight: 600;
+  font-size: 15px;
+  flex: 1;
+  line-height: 1.3;
+}
+
+.ecotrack-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  opacity: 0.8;
+}
+
+.ecotrack-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.ecotrack-content {
+  padding: 0;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.ecotrack-current-product {
+  padding: 16px 20px;
+  background: #BAC8B1;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.current-product-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.current-footprint {
+  font-size: 18px;
+  font-weight: 700;
+  color: #dc2626;
+  background: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.current-label {
+  font-size: 13px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.ecotrack-alternatives {
+  padding: 0;
+}
+
+.ecotrack-alternative {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.ecotrack-alternative:hover {
+  background: #f9fafb;
+}
+
+.ecotrack-alternative:last-child {
+  border-bottom: none;
+}
+
+.alt-info {
+  flex: 1;
+  margin-right: 12px;
+}
+
+.alt-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.alt-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7B9669;
+}
+
+.alt-savings {
+  text-align: right;
+  margin-right: 12px;
+}
+
+.savings-percent {
+  font-size: 13px;
+  font-weight: 600;
+  color: #7B9669;
+  background: #BAC8B1;
+  padding: 4px 8px;
+  border-radius: 12px;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+.alt-footprint {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.alt-button {
+  background: #7B9669;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(123, 150, 105, 0.3);
+}
+
+.alt-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(123, 150, 105, 0.4);
+  background: #6B8659;
+}
+
+.ecotrack-footer {
+  padding: 12px 20px;
+  background: #f9fafb;
+  text-align: center;
+  border-top: 1px solid #e5e7eb;
+}
+
+.powered-by {
+  font-size: 11px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes ecotrack-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes ecotrack-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.ecotrack-error {
+  color: #dc2626;
+  font-size: 13px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  #ecotrack-widget {
+    width: calc(100vw - 32px);
+    right: 16px;
+    left: 16px;
+    top: 16px;
+  }
+  
+  .ecotrack-alternative {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .alt-savings {
+    text-align: left;
+    margin-right: 0;
+  }
+}
+
+/* Scrollbar styling */
+.ecotrack-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ecotrack-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.ecotrack-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.ecotrack-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Badge for eco-friendly indicator */
+.eco-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #7B9669;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(123, 150, 105, 0.4);
+  z-index: 1;
+}

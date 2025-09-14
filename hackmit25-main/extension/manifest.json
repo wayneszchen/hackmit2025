@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Offset - Carbon Footprint Tracker",
+  "version": "1.0",
+  "description": "Track and reduce your delivery carbon footprint with smart shopping recommendations",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8001/*",
+    "http://localhost:8001/*",
+    "https://amazon.com/*",
+    "https://www.amazon.com/*",
+    "https://target.com/*",
+    "https://www.target.com/*",
+    "https://walmart.com/*",
+    "https://www.walmart.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://amazon.com/*",
+        "https://www.amazon.com/*",
+        "https://target.com/*",
+        "https://www.target.com/*",
+        "https://walmart.com/*",
+        "https://www.walmart.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Offset"
+  }
+}

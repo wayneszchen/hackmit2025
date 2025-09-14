@@ -1,0 +1,10 @@
+Create the backend for this without editing or connecting with the frontend. Just understand what's there for now and create the entire backend. Effectively what we need is for it to take an amazon link, it should be able to scrape the entire page and pass it into claude api and this is the workflow:
+Material/mass-based + shipping (more specific if you see “materials” & weight)
+
+Parse materials (“aluminum”, “steel”, “ABS/PP plastic”, “glass”, “cardboard”). Multiply mass of each by a kgCO₂e/kg factor (pull via Climatiq’s factor search). Add a packaging % if not listed. 
+Climatiq
+
+Add freight from likely origin (e.g., CN → your city): weight × distance × mode factor (air/sea/road). Use DEFRA/DESNZ 2024 tonne-km factors (free) or a free shipping API.
+
+
+You're supposed to use the claude api to get the parsing materials and whatever else you think you could use which is important. The claude api key is called claude in the .env file.

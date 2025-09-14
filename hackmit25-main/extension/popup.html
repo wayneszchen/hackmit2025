@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 350px;
+      padding: 0;
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+    
+    .header {
+      background: #7B9669;
+      color: white;
+      padding: 16px;
+      text-align: center;
+    }
+    
+    .header h1 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    .header p {
+      margin: 4px 0 0 0;
+      font-size: 12px;
+      opacity: 0.9;
+    }
+    
+    .content {
+      padding: 16px;
+    }
+    
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    
+    .stat {
+      text-align: center;
+      padding: 12px;
+      background: #f9fafb;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .stat-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1f2937;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+    
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .btn {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    
+    .btn-primary {
+      background: #7B9669;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(123, 150, 105, 0.3);
+      background: #6B8659;
+    }
+    
+    .btn-secondary {
+      background: white;
+      color: #374151;
+      border: 1px solid #d1d5db;
+    }
+    
+    .btn-secondary:hover {
+      background: #f9fafb;
+    }
+    
+    .current-page {
+      background: #BAC8B1;
+      border: 1px solid #7B9669;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+      font-size: 13px;
+    }
+    
+    .current-page-title {
+      font-weight: 600;
+      color: #6B8659;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    
+    .current-page-url {
+      color: #7B9669;
+      font-size: 11px;
+      word-break: break-all;
+      margin-bottom: 8px;
+    }
+    
+    .carbon-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-top: 8px;
+    }
+    
+    .carbon-footprint {
+      font-weight: 600;
+      color: #dc2626;
+    }
+    
+    .no-product {
+      text-align: center;
+      padding: 24px 16px;
+      color: #6b7280;
+    }
+    
+    .no-product-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+    
+    .no-product-title {
+      font-weight: 600;
+      font-size: 16px;
+      color: #374151;
+      margin-bottom: 8px;
+    }
+    
+    .no-product-desc {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    
+    .settings {
+      border-top: 1px solid #e5e7eb;
+      padding-top: 12px;
+      margin-top: 16px;
+    }
+    
+    .setting-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    
+    .setting-label {
+      font-size: 13px;
+      color: #374151;
+    }
+    
+    .setting-input {
+      width: 80px;
+      padding: 4px 8px;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🌱 EcoTrack</h1>
+    <p>Carbon footprint tracker</p>
+  </div>
+  
+  <div class="content">
+    <div id="current-page" class="current-page" style="display: none;">
+      <div class="current-page-title">🌱 Eco-Friendly Product Found</div>
+      <div id="page-title" class="current-page-url"></div>
+      <div id="carbon-info" class="carbon-info"></div>
+    </div>
+    
+    <div class="stats">
+      <div class="stat">
+        <span id="total-savings" class="stat-value">--</span>
+        <div class="stat-label">kg CO₂ saved</div>
+      </div>
+      <div class="stat">
+        <span id="alternatives-count" class="stat-value">--</span>
+        <div class="stat-label">eco alternatives</div>
+      </div>
+    </div>
+    
+    <div id="no-product" class="no-product">
+      <div class="no-product-icon">🔍</div>
+      <div class="no-product-title">No Product Detected</div>
+      <div class="no-product-desc">Navigate to a product page on Amazon to see eco-friendly alternatives!</div>
+    </div>
+    
+    <div class="actions">
+      <button id="check-product" class="btn btn-primary">Find Eco Alternatives</button>
+      <a href="http://localhost:3000" target="_blank" class="btn btn-secondary">Open Dashboard</a>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
