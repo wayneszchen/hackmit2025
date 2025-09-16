@@ -2,7 +2,7 @@
 
 A web app + browser extension for HackMIT 2025 that helps users track and reduce their delivery carbon footprint through smart shopping recommendations.
 
-## 🚀 Live Demo
+## Live Demo
 
 - **Web App**: [https://hackmit25.vercel.app/](https://hackmit25.vercel.app/)
 - **HackMIT Project**: [https://plume.hackmit.org/project/smoyj-isteg-lvkpn-nldyh](https://plume.hackmit.org/project/smoyj-isteg-lvkpn-nldyh)
