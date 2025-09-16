@@ -5,6 +5,7 @@ A web app + browser extension for HackMIT 2025 that helps users track and reduce
 ## Live Demo
 
 - **Web App**: [https://hackmit25.vercel.app/](https://hackmit25.vercel.app/)
+- **Live Demo**: [https://www.youtube.com/watch?v=u1dxeJqMdF8](https://www.youtube.com/watch?v=u1dxeJqMdF8)
 - **HackMIT Project**: [https://plume.hackmit.org/project/smoyj-isteg-lvkpn-nldyh](https://plume.hackmit.org/project/smoyj-isteg-lvkpn-nldyh)
 
 ## Features
